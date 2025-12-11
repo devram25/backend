@@ -1,4 +1,3 @@
 node_modules 
 express/.env
 youtube/.env
-youtube/.env.sample
