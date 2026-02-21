@@ -3,16 +3,16 @@ import mongoose from 'mongoose'
 const UserSchema = new mongoose.Schema({
        username:{
         type:String,
-        require:true
+        required:true
        },
        email:{
         type:String,
-        require:true,
+        required:true,
         unique:true
        },
        password:{
         type:String,
-        require:[true,"Please Enter a valid password"]
+        required:[true,"Please Enter a valid password"]
        },
        isVerfied:{
            type:Boolean,
@@ -28,6 +28,6 @@ const UserSchema = new mongoose.Schema({
        verifyTokenExpiry:Date
 })
 
-const UserModel = mongoose.model('user', UserSchema)
+const User = mongoose.models.user ||  mongoose.model('user', UserSchema)
 
-export default UserModel
+export default User
