@@ -1,8 +1,15 @@
 import React from 'react'
 
-const UserProfile = () => {
+type Props = {
+  params:{
+    id:string
+  }
+}
+
+const UserProfile = async({params}:Props) => {
+  const paramsId = await params
   return (
-    <div>UserProfile</div>
+    <div>UserProfile {paramsId.id}</div>
   )
 }
 
